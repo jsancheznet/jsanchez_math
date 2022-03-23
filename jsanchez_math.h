@@ -89,11 +89,14 @@ f32 GetRotationAngle(f32 x, f32 y)
 #define EPSILON 0.00000011920928955078125f
 b32 EqualFloats(f32 A, f32 B)
 {
-    b32 Result;
-
-    Fabs(A - B) <= EPSILON ?  Result = true : Result = false;
-
-    return Result;
+    if(Fabs(A - B) <= EPSILON)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 f32 ToRadians(f32 Input)
